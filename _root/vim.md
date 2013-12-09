@@ -27,3 +27,8 @@ vim +BundleInstall +qall
 
 ##Youcomplete me
 ``zsh .vim/ycm``
+
+
+~~~vim
+5i#<ESC> to create ##### heading
+~~~

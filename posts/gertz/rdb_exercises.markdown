@@ -3,6 +3,9 @@
   "date": "2013-12-09",
   "categories": [
 "exercises"
+  ],
+  "tags": [
+  "algorithms"
   ]
 }
 
@@ -80,11 +83,35 @@ $$n-1$$ points
 - _Convex_ Polygon Distances: Compute the minimum and maximum distance between two convex, non-overlapping polygons
 - Goal: $$O(log(N))$$
 
-Data structures?
-queries?
+####Important:
 
-Nearest neighbour query is one possibility to check 
-Important
+For a one-time query, actually building a data structure like an
+[R-Tree](http://en.wikipedia.org/wiki/R-tree) has too much overhead to still fit
+into our requirements, a dynamic approach here is better.
+Also: minimum and maximum are almost the same, so I'll just describe one of the
+two (**minimum**)
+
+~~~Python
+#P,Q are lists of points
+
+p = P[0]
+while len(Q) > 1:
+  step = len(Q)/4
+  distances = [dist(p,q) for q in [Q[i] for i in range(0,len(Q), step]]
+  indices = argmin(distances)
+  #Select quarter with the two closest points
+  Q = Q[indices[0] *step:indices[1] * step]
+  #repeat
+
+#Switch Q and P
+
+~~~
+
+###4:
+[Douglas Peucker](./douglas_peucker)
+
+
+
 
 ##[Zettel3]({{urls.media}}/gertz/rdb/assignment3_v4.pdf)
 
