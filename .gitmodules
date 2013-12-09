@@ -1,0 +1,3 @@
+[submodule "kramdown"]
+	path = kramdown
+	url = git@github.com:buotex/kramdown
