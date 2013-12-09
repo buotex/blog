@@ -1,6 +1,6 @@
 {
   "title": "Vim",
-  "date": "2013-12-07",
+  "date": "2013-12-09",
   "categories": [
     "tricks"
   ],
