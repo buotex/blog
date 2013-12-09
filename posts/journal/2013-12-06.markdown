@@ -1,0 +1,12 @@
+{
+  "title": "Diary",
+  "date": "2013-12-06",
+  "categories": [
+  "journal"
+  ]
+}
+
+- [x] Play around more with the blog
+- [x] Go to work
+- [x] Pull some money
+- [ ] Work on paper

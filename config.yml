@@ -1,0 +1,11 @@
+"theme-bootstrap-2" :
+  "use" : "theme"
+
+
+"posts" :
+  "sort" : ["date", "desc"]
+  "summary_lines" : 10
+  "latest" : 5
+
+"pdf":
+  "use": "ignore"

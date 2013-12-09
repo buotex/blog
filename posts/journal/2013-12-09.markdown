@@ -1,0 +1,20 @@
+{
+  "title": "Journal",
+  "date": "2013-12-09",
+  "categories": [
+   "journal" 
+  ],
+  "tags": [
+    
+  ]
+}
+
+
+- [x] Finished configurations
+- [ ] setup rsync for changed blog posts
+- [ ] log rsync to find changed files
+- [ ] with the log, convert changed files to latex
+- [ ] ``pdflatex -shell-escape file``
+- [ ] convert pdf via imagemagick to png
+- [ ] ``convert -density 300 -alpha off test.pdf test.png ``
+- [ ] write evernote script to either edit or commit new page

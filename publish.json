@@ -1,0 +1,8 @@
+{
+  "rsync" : {
+    "command" : "rsync compiled/. -avzr --progress  --delete --exclude .git --exclude 'assets/media'   root@box:/opt/share/www"
+  },
+  "media" : {
+    "command" : "rsync compiled/assets/media/. -avzr --progress  --delete --exclude .git root@box:/opt/share/www/assets/media"
+  }
+}

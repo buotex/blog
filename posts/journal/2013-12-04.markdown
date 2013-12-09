@@ -1,0 +1,91 @@
+---
+title: 'Diary'
+date: '2013-12-04'
+description:
+tags: []
+---
+
+
+Nun, ändern wir einmal das Format dieser Einträge.
+Der Vorteil davon is, dass ich jetzt auch endlich mal das scharf s, also ß nutzen kann ohne dass es irgendwelche
+komischen Dinge macht!
+Nachteil: leider gibt es jetzt keinen Log mehr, was etwas schade ist.
+Vielleicht würden sich die 5 dollar / Monat doch lohnen?
+Natürlich is die Privatsphäre hier etwas höher, und eine Rechtschreibprüfung hier ist auch möglich.
+Wäre es nicht interessant, einen Thesaurus oder ähnliches gleich parat zu haben?
+Vielleicht sollte ich noch die Möglichkeit einbauen, Wörter zu zählen.
+Nun, was eben hier fehlt ist die Kalenderfunktion, aber da lässt sich sicherlich etwas zusammencoden - Denn eigentlich
+ist es ja nur nötig, checkouts von allen Dateien zu machen (über die Dropbox geht das automatisch) und dann etwas
+kalenderähnliches anzuzeigen.
+
+Am besten sollten am Ende jedes Monats alle Einträge in einen Ordner geschoben werden, aber das kann man im Zweifel
+gerade noch manuell machen.
+
+Nunja, weiter geht es mit dem selbstauferlegten schreiben, was gar nicht mal so schlecht ist.
+
+
+Nun, yay vim!
+On a sidenote: Natürlich könnte ich hier auch direkt in markdown schreiben, allerdings hat man dann das Problem, dass dann automatisch das Browserfenster geöffnet wird, und ich bin mir nicht sicher dass ich das möchte.
+Hmm.... andererseits habe ich jetzt das Problem mit den falschen Zeilenlängen...
+So, jetzt funktioniert alles!
+Was nun noch wirklich fehlt, wäre ein Word count und ein Thesaurus, bzw. eine art autocompletion...
+So, was passiert jetzt?
+...Das ist bisher leider nur ein englisches wörterbuch!
+Ok, back to business.
+Die Hoffnung besteht, dass auch tippen der deutschen Sprache etwaige, etwas eingefrorene Teile der deutschen Sprache innerhalb meines Kopfes löst - denn eigentlich habe ich einiges ja schon gehört.
+Was hier unbedingt noch integriert werden muss, ist die Textlänge von etwa 80, das is ja furchtbar manuell!
+Ok, 120 Zeichen pro Zeile ist schon einmal etwas, so muss ich nicht dauernd zuviel Enter drücken.
+Also: Zurück zum Helden Projekt:
+Nun habe ich schon einmal eine Reihenfolge der Helden, die sich aus der Farm in einem gewonnenen Spiel ableitet.
+Die Reihenfolge sieht auch gar nicht so schlech aus - es ist klar ersichtlich, welche Helden in siegreichen Spielen mehr
+Farm haben.
+Allerdings is es wirklich auch ein Snowball-rating: So z.B. der Goblin Alchemist - natürlich wird er in siegreichen
+Spielen alles wegfarmen, weil da seine greedy Build funktioniert - aber wenn er verliert, dann ging es mächtig in die
+Hose.
+Woran sind wir eigentlich interessiert? Nun, in verlorenen Spielen wird sich wahrscheinlich zeigen, dass ein Alchemist
+_wesenlich_ weniger Farm kriegt.
+So könnte man also schlussfolgern, dass ein Support alchemist nichts taugt. 
+Eine Komponente die noch gänzlich in der Analyse fehlt ist der Gegner, sowohl bei siegreichen als auch bei verlorenen
+Spielen.
+
+Wir wollen ja zum Einen herausfinden, welche Helden erfolgreich sind, bezüglich ihrer Spielweise - ob es also besser
+ist, Abaddon als Farmer zu spielen.
+Bisher verwendete Algorithmen: Simulated Annealing
+Merkmale: Optimierungsverfahren (generell für diskrete Verfahren), bei dem lokale "Hügel" umgangen werden können durch
+den Temperaturparameter.
+Hierbei wird der "move", also der nächstmögliche Schritt vom Nutzer festgelegt.
+
+
+##TODO
+Was ist also noch zu tun?
+Welche Datenstrukturen gab es bei den räumlichen Datenbanken?
+KD-Tree, Range-tree, B-tree, Quad-tree etc.
+Ist davon irgendetwas anwendbar?... Glaube erstmal: nein!
+
+Vielleicht KD-Tree um nearest neighbor anzuwenden auf die Helden?
+Das wieder wäre ein Ansatz der gpm/xpm/kda nutzen könnte!
+
+Also: KD-Tree dafür
+
+Die Linear-Ordering Sortierung lässt sich natürlich noch auf andere Features nutzen, es ist weiterhin möglich hier eine
+mehrdimensionale Wertungsfunktion einzuführen.
+
+Stichwort: Binaries.
+Derzeit habe ich nur binary terms, wie wäre es noch zusätzlich mit unaries?
+
+Aber zunächst zu einer anderen Idee: 
+Dinge wie KDA sind, wie aus einem leichten Query zu sehen
+	```
+	select (avg(kills) + avg(assists))/(avg(deaths)) as kda, avg(radiant_win::int) as winrate, hero_name from played natural
+	join heros natural join match_detail group by hero_id, hero_name order by kda;
+	```
+
+nicht aussagekräftig für die Win-Loss statistik.
+Aber: Was aussagekräftig sein sollte sind kda Werte für das ganze Team!
+Aus dem Basketball is eine +- Statistik bekannt: So viele Punkte hat das Team mehr gemacht, wenn der Spieler auf dem
+Platz stand.
+D.h., dieselbe Metrik kann man doch sicher auch bei Helden anwenden!
+Was in diesem Zusammenhang der nächse Schritt wäre: Helden-Kombinationen!
+Aber zunächst machen wir dies für einzelne Helden.
+
+
