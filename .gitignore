@@ -1,7 +1,7 @@
 *.pdf
 *.zip
 compiled
-media/LectureNotes
+media
 *.py[cod]
 
 # C extensions
