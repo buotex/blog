@@ -46,7 +46,7 @@ end
 
 ### Complexity:
 
-- Average case: $$O(n \log n)$$ due to application of the [Master Theorem](/posts/algorithms/master_theorem) on the recursive formulation $$T(n) = 2T(n/2) + O(n)$$
+- Average case: $$O(n \log n)$$ due to application of the [Master Theorem](/posts/basics/master_theorem) on the recursive formulation $$T(n) = 2T(n/2) + O(n)$$
 - Worst case: $$O(n^2)$$ 
 
 ### Analysis:

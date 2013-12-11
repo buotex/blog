@@ -1,6 +1,6 @@
 {
   "title": "Vim",
-  "date": "2013-12-09",
+  "date": "2013-12-11",
   "categories": [
     "tricks"
   ],
@@ -30,5 +30,8 @@ vim +BundleInstall +qall
 
 
 ~~~vim
-5i#<ESC> to create ##### heading
+- ``5i#<ESC>`` to create ##### heading
+- ``s/[A-Z]\{2,} /\L&/g`` Replace all uppercase words with at least 2 letters to their 
+  lowercase variant
+- ``s/\([A-Z]\)\([A-Z]\{1,}\) /\1\L\2 /g`` Turn uppercase word into Upper+lowercase
 ~~~

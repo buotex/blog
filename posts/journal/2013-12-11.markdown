@@ -1,0 +1,45 @@
+{
+  "title": "Journal",
+  "date": "2013-12-11",
+  "categories": [
+  "journal"
+  ],
+  "tags": [
+"linear algebra",
+   "c++",
+"python" 
+  ]
+}
+
+{{#todo_block}}
+- [] Don't work on the blog for a day
+- [+] Drink enough water
+- [] Do sports!
+- [] Do at least 2 exercise sheets for rdb
+- [] Study some algorithms?
+- [] Create 3 posts!
+- [] Figure out why sometimes the css isn't loaded, though that could be just
+  Chrome.
+- [] Write solutions for Zettel3 before forgetting them!
+
+{{/todo_block}}
+
+So today marks about one week since the inception of the blog, and now it has
+fancy features!
+As I yesterday wrote the first plugin, todolists are now implemented (and
+hopefully pushed into git...
+Actually, let's use vim to check that~
+To do that (and to remind myself), just use :Gstatus while in the git
+repository, and press ``-`` to add or remove files from the commit, which can be
+done via :Gcommit.
+...Is it possible to pass a commit message as well during that time? Let's use
+:help Gcommit!
+Anyway, time to write something about my actual studying.
+
+
+
+Daily links:
+- [Linear algebra tutorial](http://minireference.com/blog/linear-algebra-tutorial/)
+- [Python magic methods](http://www.rafekettler.com/magicmethods.html)
+- [Obscure C++](http://madebyevan.com/obscure-cpp-features/?viksra)
+- [Daily nerd?](http://en.wikipedia.org/wiki/Fabrice_Bellard)

@@ -1,14 +1,20 @@
 {
   "title": "Exercises for rdb",
-  "date": "2013-12-09",
+  "date": "2013-12-11",
   "categories": [
 "database",
 "exercises"
   ],
   "tags": [
   "algorithms"
-  ]
+  ],
+ "widgets": {
+        "google_prettify": {
+            "use": "sql"
+        }
+    }
 }
+
 
 ##[Zettel1]({{urls.media}}/gertz/rdb/assignment1.pdf)
 1:
@@ -121,4 +127,148 @@ See
 
 ##[Zettel4]({{urls.media}}/gertz/rdb/assignment4.pdf)
 
+###1:
+Actually, I still have the old solutions for that!
+
+
+####a:
+
+~~~sql
+
+Explain ANALYZE
+SELECT id
+FROM places
+WHERE
+((lng-8.693)^2 + (lat-49.41)^2) <= 0.25
+Order By ((lng-8.693)^2 + (lat-49.41)^2) ASC
+Limit 5;
+~~~
+
+Just standard database query.
+
+
+####b:
+
+~~~sql
+--Explain ANALYZE
+Select id
+From places
+Where 
+lng Between 8.193 And 9.193 AND
+lat Between 48.91 And 49.91 AND
+((lng-8.693)^2 + (lat-49.41)^2) <= 0.25
+Order By ((lng-8.693)^2 + (lat-49.41)^2) ASC
+Limit 5;
+~~~
+
+Limit results beforehand with indices on lng and lat, by user knowledge of the
+metric used.
+
+####c:
+
+~~~sql
+--Explain ANALYZE
+Select id
+From places
+Where ST_Distance(ST_GeomFromText('POINT(8.693 49.41)',4326),point)<=0.5
+Order By ST_Distance(ST_GeomFromText('POINT(8.693 49.41)',4326),point) ASC
+Limit 5;
+~~~
+
+Use of ``ST_Distance``, which uses the euclidean metric, doing a query region / point overlap.
+
+####d:
+
+~~~sql
+--Explain ANALYZE
+Select id
+From places
+Where point && ST_Expand(ST_GeomFromText('Point(8.693 49.41)', 4326), 0.5) AND
+	ST_Distance(ST_GeomFromText('POINT(8.693 49.41)', 4326), point) <= 0.5
+Order By ST_Distance(ST_GeomFromText('POINT(8.693 49.41)', 4326), point) ASC
+Limit 5;
+
+~~~
+
+Use of ``ST_Expand``, which creates a neighborhood around the query point, so
+now we query region / region overlap.
+
+
+###2:
+
+~~~python
+#Let P = points
+#Let C = convexHull(P)
+
+minrect = rect(inf,inf)
+for c1,c2 in zip(C[::2],C[1::2]):
+  l = line(c1,c2)
+  #Rotate all points so that the line is axis-aligned
+  P_rotated = transform_coordinates_to_axes(l, P)
+  rect = bounding_box(p_rotated)
+  if rect <= minrect:
+    minrect = rect
+
+~~~
+
+What is the runtime for that?
+The outer loop runs in $$O(n)$$, so the runtime of the bounding box algorithm
+that's important.
+Given that we restrict the bounding boxes to be axis aligned (due to the
+rotation), it can just be computed via min/max values.
+That said, this actually still takes linear time, as we have to recompute after
+every rotation, so it is still $$O(n^2)$$ combined.
+
+
+[Rotating calipers](http://en.wikipedia.org/wiki/Rotating_calipers)
+
+
+
+###3:
+
+####KD-Tree
+
+- [posts/kdtree](/posts/gertz/kdtree)
+
+
+
+
+##[Zettel5]({{urls.media}}/gertz/rdb/assignment5_v2.pdf)
+
+###1:
+
+~~~sql
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = off;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET escape_string_warning = off;
+SET search_path = public, pg_catalog;
+SET default_tablespace = '';
+SET default_with_oids = false;
+
+
+CREATE TABLE places(
+         id integer PRIMARY KEY, 
+         name varchar, 
+		 type varchar,
+         lat float, 
+         lng float);
+SELECT addgeometrycolumn('places', 'point', 4326, 'POINT', 2);
+COPY places(id, name, type, lat, lng) FROM STDIN; 
+~~~
+
+~~~sql
+SELECT *
+FROM places
+where point && ST_Expand(ST_GeomFromText('Point(8.9 48.8)', 4326), 0.1) AND
+ST_Distance(ST_GeomFromText('POINT(8.9 48.8)', 4326), point) <= 0.1
+AND type = 'restaurant'
+ORDER BY ST_DISTANCE(ST_GeomFromText('Point(8.9 48.8)', 4326), point) ASC
+LIMIT 10;
+~~~
+
+
+
+###2:
 

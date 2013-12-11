@@ -24,5 +24,6 @@ Create an implementation of a todo-list!
   the queries via javascript
 - [+] To do automatic refreshing, the server replies with a blank html page which
   redirects back to the original (though with a ticked todo) page.
+- [+] Fixed the automatic update of dates in the markdown headers
 
 {{/todo_block}}
