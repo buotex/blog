@@ -1,0 +1,28 @@
+{
+  "title": "",
+  "date": "2013-12-10",
+  "categories": [
+  "journal"
+  ],
+  "tags": [
+    
+  ]
+}
+
+Daily task:
+Create an implementation of a todo-list!
+
+{{#todo_block}}
+- [+] Create an implementation of a todo-list
+- [+] Every todo should be tickable via the browser
+- [+] The file itself should be as clean as possible
+- [+] Thus, implementation via mustache code blocks, plugins/todolist/todo.rb
+  wrap around todoblocks with the {{#todo_block}}{{/todo_block}} syntax and puts a link 
+  into every []
+- [+] Run script serverside which handles the api queries produced by the aforementioned links
+- [+] That script runs on another port (8888), thus we have to switch the port in
+  the queries via javascript
+- [+] To do automatic refreshing, the server replies with a blank html page which
+  redirects back to the original (though with a ticked todo) page.
+
+{{/todo_block}}

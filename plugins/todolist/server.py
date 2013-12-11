@@ -50,8 +50,8 @@ class ApiHandler(web.RequestHandler):
 
         self.write('<html xmlns="http://www.w3.org/1999/xhtml">'+
                     '<head>' +
-                    '<meta http-equiv="refresh" content="1;URL=\'{}\'" />'.format(result) +
-                    '</head></html>')
+                    '<meta http-equiv="refresh" content="0.5;URL=\'{}\'" />'.format(result) +
+                    '</head><body>Ticking...</body></html>')
         #self.redirect(result)
         self.finish()
 

@@ -2,6 +2,7 @@
   "title": "Exercises for rdb",
   "date": "2013-12-09",
   "categories": [
+"database",
 "exercises"
   ],
   "tags": [
@@ -108,12 +109,15 @@ while len(Q) > 1:
 ~~~
 
 ###4:
-[Douglas Peucker](./douglas_peucker)
+See
+[posts/Douglas Peucker](/posts/gertz/douglas_peucker)
 
 
 
 
 ##[Zettel3]({{urls.media}}/gertz/rdb/assignment3_v4.pdf)
+
+**’Plane-sweep’ and ’Divide and Conquer’ Algorithms**
 
 ##[Zettel4]({{urls.media}}/gertz/rdb/assignment4.pdf)
 

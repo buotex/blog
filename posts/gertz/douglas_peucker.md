@@ -9,7 +9,10 @@
   ]
 }
 
+[Wiki](http://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm)
+
 ~~~lua
+
 function DouglasPeucker(PointList[], epsilon)
     // Find the point with the maximum distance
     dmax = 0
@@ -36,4 +39,30 @@ function DouglasPeucker(PointList[], epsilon)
     // Return the result
     return ResultList[]
 end
+
 ~~~    
+
+![Animated algorithm]({{urls.media}}/gertz/rdb/Douglas-Peucker_animated.gif)
+
+### Complexity:
+
+- Average case: $$O(n \log n)$$ due to application of the [Master Theorem](/posts/algorithms/master_theorem) on the recursive formulation $$T(n) = 2T(n/2) + O(n)$$
+- Worst case: $$O(n^2)$$ 
+
+### Analysis:
+
+- Worst case: No simplification possible, worst points in linear order. (So the
+  outer loop is (1-n), (2-n), (3-n) etc.
+- Average case: Worst point in the middle, therefore problem getting split up
+  $$(T(n/2))$$, though each half has to be worked on, so $$2(\cdot)$$ along with
+  $$O(n)$$ to iterate over every point to check if it is the worst one.
+
+
+### Optimality:
+
+Does it present the _best_ solution, i.e. is the problem convex?
+Actually, no! The order of things is important here.
+
+Counter-example:
+
+![Counter example]({{urls.media}}/gertz/rdb/Douglas_Peucker.png)
