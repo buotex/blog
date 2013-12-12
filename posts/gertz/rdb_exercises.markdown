@@ -124,6 +124,54 @@ See
 ##[Zettel3]({{urls.media}}/gertz/rdb/assignment3_v4.pdf)
 
 **’Plane-sweep’ and ’Divide and Conquer’ Algorithms**
+###2:
+Visibility of line segments:
+
+~~~python
+#Let P be the ordered list of all start and endpoints of the intervals in
+#x-direction
+#Let I be the ordered list of the y-coordinate of the intervals.
+#Let A be an ordered indicator list whether an interval is currently active.
+
+for p in P:
+  if is_start(p):
+    set_active(p,A)
+    for n in neighbours(p,A):
+      add(p,n)
+  else:
+    set_inactive(p,A)
+    for n in neighbours(p,A):
+      add(n1,n2)
+   
+
+Here we assume that they all have different end and starting points, otherwise
+we have to do the active/inactive settings all at once and then do the
+visibility checks afterwards.
+~~~
+
+Complexity: 
+$$#P = 2n$$, therefore the outer loop is $$O(n)$$.
+The inner loop to actually find the neighbours though can be encoded (via a
+linked list, for example), into $$O(\log n)$$, so we again arrive at $$O(n \log
+n)$$
+
+###3:
+
+**Overlapping areas**
+Divide and conquer:
+Recursion scheme:
+- Only places that matter are the critical points
+- Bounding boxes? Would be upper limit, could do branch and bound scheme with that?
+- The overlapping area of triangles can itself be modeled as triangles again!
+- Check the different scenarios: vertex - vertex, edge - vertex or edge - edge
+  which end up decomposable into 2, 1 and 2 triangles (Due to 4,3,4 vertices)
+- As the non-overlapping regions have to be taken into account as well though,
+  we end up with many triangles, can be more than the initial number.
+- So instead, just ask for polygon overlaps?
+- Now, what is the complexity for a polygon - polygon overlap... -> n + n?
+Therefore, we look at the following recursion scheme:
+$$T(n) = 2T(n/2) + $$
+
 
 ##[Zettel4]({{urls.media}}/gertz/rdb/assignment4.pdf)
 
