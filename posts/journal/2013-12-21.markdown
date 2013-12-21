@@ -1,0 +1,83 @@
+{
+  "title": "Aftermath of the ICPR paper",
+  "date": "2013-12-21",
+  "categories": [
+    "daily"
+  ],
+  "tags": [
+	 "paper",
+	 "dates"
+  ]
+}
+
+
+Scratch that, it is a good exercise to actually think about titles instead of
+using the date for it!
+The category alone (daily) should be useful enough for sorting!
+Should I get back into the habit of writing 750 words?
+Have I done some sports today?
+As we can see in the calendar, I haven't written any journal posts in the past
+week, both to being busy(actually working on the paper) and doing some other
+stuff.
+
+Anyway, today was the first day in quite a while I've worked a lot, so I'm happy
+with myself!
+Hopefully, my package has arrived at home, so I can play around with it.
+Other than that, I can say that I really look forward to having 1-2 weeks off,
+completely, as my batteries really started to run looooow.
+Note to self: vim still needs something like a functioning word count, although
+i could of course pipe it into wc -w, I guess?
+Hmm... There is a specific command to create the journal files, I could also
+mark them automatically with a specific file ending (which is kinda ugly)
+Or just set a buffer? variable when creating / opening the corresponding post to
+do the line counting.
+Of course, the easiest solution would be a vim plugin to do everything for me!
+
+That said, does wakati.me actually still run?
+At least ycm didn't crash, but it did have some weird issues which got me to
+restart it.
+
+Sidenote: I guess the week of writing words in here really helped me, this time
+writing the paper went much easier than before - I was also strangely motivated.
+Though perhaps I was just motivated to finally finish it? ...
+
+
+So what about the paper?
+Well, as I've worked on it far too late, my supervisor didn't get to read it -
+so we'll wait for the next conferences.
+Actually, I have to check the submission beginnings, not only the deadlines...Or
+did I check them already?
+Well, which conferences did he mention again?
+Of course, the big one: ECCV, where the submission deadline is in march.
+That one is the big fish - but the paper would need to still get quite a
+facelift, it's not nearly good enough for that.
+On the other hand, apparently it got better over the past couple hours, which is
+strangely uplifting. (PS: wrist hurts from playing foosball solo)
+(PPS: don't forget catching the tram, it's getting late)
+
+The other 2 conferences: A british one called BMVC, where the submissions start
+in may and (ex) dagm, now called gcpr, where the deadline is also in may.
+Notifications about acceptance would be in july, for both.
+Deadline for ECCV: march, which is surprisingly early (for me).
+Well, I guess we're trying to get to one of these conferences...
+Anyway, time to log off, have to catch a tram.
+
+Note: Pain in chest.
+
+Todo:
+
+{{#todo_block}}
+- [] Map the todo block to a key, I'm too lazy to type it
+- [] Go over my paper again, I used some awesome words!
+- [] Write up some matplotlib tricks, because I'm going to forget them again...,
+  perhaps link Gist? - Actually, that's an awesome idea!
+- [] Do a bit of sports!
+- [] Find a way to make categories clickable, so that it only shows all entries
+  sorted by date belonging to a specific category
+{{/todo_block}}
+
+#References:
+
+- [GCPR 2014](http://cvpr.uni-muenster.de/GCPR2014/)
+- [BMVC 2014](http://bmvc2014.cs.nott.ac.uk/)
+- [ECCV 2014](http://eccv2014.org/)

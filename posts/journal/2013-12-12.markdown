@@ -1,0 +1,21 @@
+{
+  "title": "Journal",
+  "date": "2013-12-12",
+  "categories": [
+  "journal"
+  ],
+  "tags": [
+  ]
+}
+
+{{#todo_block}}
+- [+] Added Fig and Eq to all references by using figref and eqref correctly!
+- [] Use the word 'culminating' in the paper!
+- [+] Finish 2nd draft
+- [+] Present paper to Ferdi to read it
+{{/todo_block}}
+
+
+Links:
+- [Inkscape mini tutorial](http://karussell.wordpress.com/2008/03/21/inkscape-intuitive-and-elegant/)
+- [Matplotlib](http://damon-is-a-geek.com/publication-ready-the-first-time-beautiful-reproducible-plots-with-matplotlib.html)

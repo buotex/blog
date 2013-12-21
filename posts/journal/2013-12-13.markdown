@@ -1,0 +1,76 @@
+{
+  "title": "2013-12-13",
+  "date": "2013-12-13",
+  "categories": [
+   "daily" 
+  ],
+  "tags": [
+	"links"
+  ]
+}
+
+{{#todo_block}}
+- [] Work in suggestions by Ferdi (Freddi)
+- [] Make new plot for the red arrow / green arrow thing
+- [] Layout issues
+- [] Talk to Uli
+{{/todo_block}}
+
+References:
+-	[Hackernews for ML](http://www.datatau.com)
+-	[Studying](http://www.Metacademy.org)
+
+
+Bug for Ycm:
+
+~~~
+Error detected while processing function
+<SNR>86_OnInsertLeave..<SNR>86_OnFileReadyToParse:
+line   13:
+Traceback (most recent call last):
+Error detected while processing function
+<SNR>86_OnInsertLeave..<SNR>86_OnFileReadyToParse:
+line   13:
+  File "<string>", line 1, in <module>
+Press ENTER or type command to continue
+Error detected while processing function
+<SNR>86_OnInsertLeave..<SNR>86_OnFileReadyToParse:
+line   13:
+  File
+"/home/bxu/.vim/bundle/YouCompleteMe/autoload/../python/ycm/youcompleteme.py",
+line 203, in OnFileReadyToParse
+Press ENTER or type command to continue
+Error detected while processing function
+<SNR>86_OnInsertLeave..<SNR>86_OnFileReadyToParse:
+line   13:
+    self._NotifyUserIfServerCrashed()
+Press ENTER or type command to continue
+Error detected while processing function
+<SNR>86_OnInsertLeave..<SNR>86_OnFileReadyToParse:
+line   13:
+  File
+"/home/bxu/.vim/bundle/YouCompleteMe/autoload/../python/ycm/youcompleteme.py",
+line 131, in _NotifyUserIfServerCrashed
+Press ENTER or type command to continue
+Error detected while processing function
+<SNR>86_OnInsertLeave..<SNR>86_OnFileReadyToParse:
+line   13:
+    error_output )
+Press ENTER or type command to continue
+Error detected while processing function
+<SNR>86_OnInsertLeave..<SNR>86_OnFileReadyToParse:
+line   13:
+  File
+"/home/bxu/.vim/bundle/YouCompleteMe/autoload/../python/ycm/vimsupport.py", line
+167, in PostMultiLineNotice
+Press ENTER or type command to continue
+Error detected while processing function
+<SNR>86_OnInsertLeave..<SNR>86_OnFileReadyToParse:
+line   13:
+    .format( EscapeForVim( str( message ) ) ) )
+Press ENTER or type command to continue
+Error detected while processing function
+<SNR>86_OnInsertLeave..<SNR>86_OnFileReadyToParse:
+line   13:
+KeyboardInterrupt
+~~~
