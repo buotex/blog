@@ -14,13 +14,14 @@
 {{#todo_block}}
 - [] Don't work on the blog for a day
 - [+] Drink enough water
-- [] Do sports!
-- [] Do at least 2 exercise sheets for rdb
-- [] Study some algorithms?
-- [] Create 3 posts!
+- [+] Do sports!
+- [+] Do at least 2 exercise sheets for rdb
+- [+] Study some algorithms?
+- [+] Create 3 posts!
 - [] Figure out why sometimes the css isn't loaded, though that could be just
   Chrome.
-- [] Write solutions for Zettel3 before forgetting them!
+- [+] Write solutions for Zettel3 before forgetting them!
+- [+] Made sql code pretty by using correct google css for that part
 
 {{/todo_block}}
 

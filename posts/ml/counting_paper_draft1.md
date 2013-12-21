@@ -6,12 +6,13 @@
   ]
 }
 
+{{#todo_block}}
 ##General issues {#Test}
-- [ ] Typos, missing words
+- [+] Typos, missing words
 - [ ] Switch cite-ing method
 - Layout
 - Perhaps slightly more text for the figures?
-- [ ] References are overlapping and ultra-ugly
+- [+] References are overlapping and ultra-ugly
 - [ ] Rearrange some of the figures
 - Take the bayer data into account? - No ground truth... and also worked with
   mask
@@ -23,7 +24,7 @@
 	This improves the speed a lot.
 - Refer to ilastik0.5 (or even 0.6) implementation?
 - Stress that code is available, as the gui part is missing
-
+{{/todo_block}}
 
 ##Design of counting paper
 

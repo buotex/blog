@@ -7,5 +7,7 @@
   "summary_lines" : 10
   "latest" : 5
 
+"kramdown":
+  "use": "ignore"
 "pdf":
   "use": "ignore"
