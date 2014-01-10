@@ -1,6 +1,6 @@
 {
   "title": "Exercises for rdb",
-  "date": "2013-12-11",
+  "date": "2014-01-07",
   "categories": [
 "database",
 "exercises"
@@ -272,3 +272,33 @@ LIMIT 10;
 
 ###2:
 
+Task: algorithm for the overlap of 2 region quad trees
+
+~~~python
+def intersect(tree1, tree2, tree3):
+  if tree1 is leaf or tree2 is leaf: 
+    if tree1.filled() and tree2.filled():
+      tree3.setFilled()
+      return
+  if tree1.children == tree2.children:
+    tree3.children = tree1.children
+  else:
+    tree3.createChildren()
+    for t1,t2,t3 in zip(tree1,tree2,tree3):
+      intersect(t1,t2,t3)
+
+
+
+~~~
+Complexity: $$O(n * (d + 1))$$ where d = max(d1,d2)
+
+####QuadTree
+
+- [posts/quadtree](/posts/gertz/QuadTree)
+
+####RTree
+
+- [posts/rtree](/posts/gertz/rtree)
+
+
+##[Zettel6]({{urls.media}}/gertz/rdb/assignment6.pdf)
