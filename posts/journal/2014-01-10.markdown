@@ -1,0 +1,18 @@
+{
+  "title": "Journal",
+  "date": "2014-01-10",
+  "categories": [
+	"daily"
+  ],
+  "tags": [
+    
+  ]
+}
+
+{{#todo_block}}
+- [] Check Reinsert for Rtrees, what does it do?
+- [] Find a way in vim to put brackets or * around a word or sentence.
+- [+] Deal with BYR
+- [+] Find Uli
+{{/todo_block}}
+
