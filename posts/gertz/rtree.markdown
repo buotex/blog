@@ -1,6 +1,6 @@
 {
   "title": "R Tree",
-  "date": "2014-01-08",
+  "date": "2014-01-10",
   "categories": [
     "database"
   ],
@@ -12,6 +12,7 @@
 **The key idea of the data structure is to group nearby objects and represent them
 with their minimum bounding rectangle in the next higher level of the tree; the
 "R" in R-tree is for rectangle.**
+
 - Balanced search tree
 - Organizes the data in pages
 - Designed for storage on disk (as used in
@@ -34,8 +35,9 @@ and non-leaf nodes (oid versus nodeid).
 
 The tuning of the number of entries m per node between 0 and M/2 is
 related to the splitting strategy:
-– an R-tree of depth d indexes between md+1 and Md+1 objects
-– for N objects, the depth of an R-tree is between ⎣logm(N)⎦ -1 and
+
+- an R-tree of depth d indexes between md+1 and Md+1 objects
+- for N objects, the depth of an R-tree is between ⎣logm(N)⎦ -1 and
 ⎣logM(N)⎦ -1 (the exact value depends on page utilization).
 Example: assume size(P)=4K and size(E)=16 (for mbb) + 4 (for oid) bytes,
 and m is set to 40% of page capacity. Thus, M=204 and m=81.
@@ -106,29 +108,94 @@ Linear is way more greedy and depends on the order of the entries.
 
 [Script]({{urls.media}}/gertz/rdb/04-indexing-3.pdf#page=16)
 
-#Research:
+##Deletion
 
-- Build tree from scratch efficiently (Bulk loading)
-- Handling deletion/insertion
+- Find leaf with object
+- remove object from leaf
+- reorganize the tree if necessary (optional)
+
+
+[Script-Reorganize]({{urls.media}}/gertz/rdb/04-indexing-3.pdf#page=21)
+
+**Reorganize** is executed on the **leaf + entry** to be deleted
+
+Reorganization is required if the deletion results in a leaf node which has less
+than $$m$$ entries.
+
+~~~python
+
+def Reorganize(N,e):
+  Q = []
+  delete e from N
+  if (|N| < m):
+    Q.append(N)
+
+    F = GetParent(N)
+    Q.extend( Reorganize(F, entry of N in F) )
+  
+  else:
+    AdjustPath(N) // N has been modified, adjust path 
+
+Q = Reorganize(L,e)
+Reinsert(Q)
+~~~
+
 
 
 ![]({{urls.media}}/gertz/rdb/r_tree.svg)
 
 #Variants
 
+##R* Tree
+
+Optimizing for 
+- node overlapping,
+- area covered by a node, and
+- perimeter of a node’s directory rectangle
+
+###Ideas:
+
+####Splitting priority
+Find the best **axis** to split on.
+
+#### Forced reinsertion
+R*-tree tries to avoid splitting by 
+reinserting the rectangles from v for 
+which the dead space in the node is the largest
+- compute distance *d* 
+between their centroid and the centroid of the node’s mbb
+- sort in decreasing order on *d*
+- take the first *p* entries from the sorted list (typically, *p* = 30%)
+
 ##R+ Tree
 
-##R* Tree
+
+
 
 
 
 [Script]({{urls.media}}/gertz/rdb/04-indexing-3.pdf)
 
+[Another Script]({{urls.media}}/gertz/rdb/rtree_1rotated.pdf)
 
 <audio controls>
   <source src="{{urls.media}}/gertz/rdb/101 Overture.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
+
+#Research:
+
+####Parameter m:
+
+- With higher m, you get denser trees which are less deep.
+- Under/Overflows are more likely, so searches are preferred compared to
+manipulations.
+
+#Todo:
+{{#todo_block}}
+- []Bad example for insertions, as they are order-dependent
+{{/todo_block}}
+
 
 dr
 : directory rectangle

@@ -15,3 +15,6 @@ Search for file in current path and subdirectories
 ```tree -P "*foo"```
 Search for filename, with a tree diagram
 
+
+```pdftk rtree_1.pdf cat 1-endeast output rtree_1rotated.pdf```
+Rotate all pages of a pdf by 90 degrees.
