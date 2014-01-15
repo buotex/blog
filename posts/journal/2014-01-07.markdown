@@ -1,0 +1,17 @@
+{
+  "title": "",
+  "date": "2014-01-07",
+  "categories": [
+    
+  ],
+  "tags": [
+    
+  ]
+}
+
+
+{{#todo_block}}
+- [] Next exercise sheets
+- [] Trying to remember wtf i did before the last 2(3) weeks
+
+{{/todo_block}}
