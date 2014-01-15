@@ -6,7 +6,7 @@ with open('daily.json','w') as fg:
     tuples = []
     with open('daily.txt') as filehandle:
         for line in filehandle:
-            splitup = line.split(" ")
+            splitup = line.split()
             date = splitup[0]
             added = splitup[4]
             removed = splitup[6]
