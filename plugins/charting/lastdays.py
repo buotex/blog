@@ -25,7 +25,7 @@ with open('daily.json','w') as fg:
         #print date.strf("%A")
         #datestring = '"Date(%d, %d, %d)","f": "%d-%d-%d"' %(timetuple[0], timetuple[1]-1, timetuple[2],
         #                                                               timetuple[0], timetuple[1]-1, timetuple[2])
-        fg.write('{"c":[{"v":%s},{"v":%d}, {"v":%d}]},\n' % (datestring, num, num >= 300))
+        fg.write('{"c":[{"v":"%s"},{"v":%d}, {"v":%d}]},\n' % (datestring, num, num >= 300))
 
     fg.seek(-2, os.SEEK_END)
     fg.truncate()
