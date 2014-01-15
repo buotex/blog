@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 echo $PWD
 a=""
 b=""
