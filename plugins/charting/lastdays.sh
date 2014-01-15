@@ -1,4 +1,5 @@
 #!/bin/bash
+echo $PWD
 a=""
 b=""
 for i in $(seq 0 30)
