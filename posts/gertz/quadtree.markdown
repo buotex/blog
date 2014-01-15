@@ -1,6 +1,6 @@
 {
   "title": "Quad Tree",
-  "date": "2014-01-07",
+  "date": "2014-01-14",
   "categories": [
 	"database"
     
@@ -62,9 +62,59 @@ $$O((d+1)n)$$ nodes and can be constructed in $$O((d+1)n)$$ time.
 - Does only work for directional NN
 
 
+#Quadtree Complexity:
+For a given polygon with perimeter $$p$$,
+$$O(n+p)$$
+
 #MX QuadTree
 
+Aim:
+
+- Ensure that the shape (and height) of the tree is independent of the
+number of nodes in the tree, as well as the order of insertions.
+- Adequate presentation for points as long as the domain of the points is
+finite and discrete (i.e., there’s a minimum separation between points).
+
+
+<details>
+<img src="{{urls.media}}/gertz/rdb/mx_quad1.png">
+<img src="{{urls.media}}/gertz/rdb/mx_quad2.png"></details>
+
+
 #PM QuadTree
+
+- Represent polygonal maps
+- Either vertex or edge-based
+
+$$PM_1$$
+- Instead of requiring that points in a square are homogeneous, we
+require that
+1. every leaf of the quadtree corresponds to a square that has at most one
+point (vertex of the polygon) located in it.
+2. a leaf node that stores information about a vertex may only contain
+additional information about edges that are incident to that vertex.
+3. a leaf that does not contain information about a vertex may only contain
+information about at most one part of an edge.
+If the above conditions cannot be satisfied, the square has to be partitioned
+further.
+
+$$PM_2$$
+- If a leaf node’s region contains no vertices, then it can contain
+only edges that meet at a common vertex exterior to the region.
+
+<details><img src="{{urls.media}}/gertz/rdb/pm_quad1.png"></details>
+
+#Space-Filling curves
+
+A space-filling curve defines a total order on the cells of a 2-dimensional
+grid. They assign numbers to cells such that cells that are close in space
+are also close in the total (physical) order imposed by the space filling
+curve.
+In general, a space-filling curve tries to map a 2-dimensional space into a
+1-dimensional space (extension to 3-dimensional exist as well).
+<details>
+<summary>Morton code</summary>
+<img src="{{urls.media}}/gertz/rdb/space_filling.png"></details>
 
 
 [Script]({{urls.media}}/gertz/rdb/04-indexing-2.pdf)

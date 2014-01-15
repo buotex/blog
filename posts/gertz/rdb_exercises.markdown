@@ -1,6 +1,6 @@
 {
   "title": "Exercises for rdb",
-  "date": "2014-01-07",
+  "date": "2014-01-13",
   "categories": [
 "database",
 "exercises"
@@ -342,7 +342,7 @@ Complexity: $$O(n * (d + 1))$$ where d = max(d1,d2)
 
 ####QuadTree
 
-- [posts/quadtree](/posts/gertz/QuadTree)
+- [posts/quadtree](/posts/gertz/quadtree)
 
 ####RTree
 
@@ -350,3 +350,34 @@ Complexity: $$O(n * (d + 1))$$ where d = max(d1,d2)
 
 
 ##[Zettel6]({{urls.media}}/gertz/rdb/assignment6.pdf)
+
+####Distances
+
+- [posts/metrics](/posts/gertz/metrics)
+
+####Nearest Neighor
+
+- Every point has the lower bound of its euclidean distance
+- The active upper bound is the current lowest graph distance
+- All points whose lower bound are too big can be pruned
+- Refinement can be done by evaluating graph distance
+- Best index structure to find candidates is M-Tree
+
+Example:
+<details>
+<img src="{{urls.media}}/gertz/rdb/Z_6_2.png">
+</details>
+
+####M-Tree
+
+Goal: Replace pruning step, so replace
+$$dist(child:obj; obj)  \leq d + child:cov rad. $$
+with the help of parent_dist
+
+One heuristic:
+Reverse triangle inequality
+If |parent_dist(child)- parent_dist(query)| <= d + child:cov rad
+
+
+
+##[Zettel7]({{urls.media}}/gertz/rdb/assignment7.pdf)
