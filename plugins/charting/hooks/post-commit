@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# An example hook script that is called after a successful
+# commit is made.
+#
+# To enable this hook, rename this file to "post-commit".
+
+~/code/gitstats/gitstats  ~/blog ~/code/gitstats/blog 
+cp ~/code/gitstats/blog/lines_of_code_json.dat ~/blog/media/linecount.json    
+cd ~/code/blog/plugins/charting
+lastdays.sh > daily.txt
+lastdays.py
+cp daily.json ~/blog/media/daily.json

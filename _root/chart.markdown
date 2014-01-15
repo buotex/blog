@@ -39,11 +39,28 @@
         var timeline = new google.visualization.AnnotatedTimeLine(document.getElementById('visualization'));
         timeline.draw(data, {'displayAnnotations': true});
 
+        var jsonData2;
+        $.ajax({
+        url: "assets/media/daily.json",
+        async: false,
+        dataType: 'json',
+        success: function(data) {
+          jsonData2= data;
+        }
+      });
+        var data = new google.visualization.DataTable(jsonData2, 0.5);
+       // Create and draw the visualization.
+        var timeline = new google.visualization.AnnotatedTimeLine(document.getElementById('daily'));
+        timeline.draw(data, {'displayAnnotations': true});
       }
       google.setOnLoadCallback(drawVisualization);
     </script>
   </head>
   <body style="font-family: Arial;border: 0 none;">
+
+<h2>Daily Progress for the past 30 days</h2>
+    <div id="daily" style="width: 500px; height: 400px;"></div>
+<h2>Overall overview</h2>
     <div id="visualization" style="width: 500px; height: 400px;"></div>
   </body>
 </html>
