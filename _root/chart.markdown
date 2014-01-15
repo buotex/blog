@@ -20,7 +20,7 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
     <script type="text/javascript">
-      google.load('visualization', '1', {packages: ['annotatedtimeline']});
+      google.load('visualization', '1', {packages: ['annotatedtimeline', 'table']});
     </script>
     <script type="text/javascript">
       function drawVisualization() {
@@ -50,8 +50,9 @@
       });
         var data = new google.visualization.DataTable(jsonData2, 0.5);
        // Create and draw the visualization.
-        var timeline = new google.visualization.AnnotatedTimeLine(document.getElementById('daily'));
-        timeline.draw(data, {'displayAnnotations': true});
+        var table = new google.visualization.Table(document.getElementById('daily'));
+        table.draw(data, {showRowNumber: true});
+        //timeline.draw(data, {'displayAnnotations': true});
       }
       google.setOnLoadCallback(drawVisualization);
     </script>
