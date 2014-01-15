@@ -7,8 +7,8 @@
 
 #~/code/gitstats/gitstats  ~/blog ~/code/gitstats/blog 
 #cp ~/code/gitstats/blog/lines_of_code_json.dat ~/blog/media/linecount.json    
-cd ~/code/blog/plugins/charting
-./lastdays.sh > daily.txt
+#cd ~/code/blog/plugins/charting
+~/code/blog/plugins/charting/lastdays.sh > ~/code/blog/plugins/charting/daily.txt
 #python lastdays.py
 #rm daily.txt
 #mv daily.json ~/blog/media/daily.json
