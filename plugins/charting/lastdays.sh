@@ -4,7 +4,7 @@ a=""
 b=""
 for i in $(seq 0 30)
 do
-    b=$(git diff --shortstat "@{ $i day ago }")
+    b=$(git diff --shortstat "master@{ $i day ago }")
     if [[ "$b" != "$a" ]]; then
         echo $(date --date="$i days ago" +%F) $b
     else
