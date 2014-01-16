@@ -1,6 +1,6 @@
 {
   "title": "Counting status November",
-  "date": "2013-11-30",
+  "date": "2014-01-16",
   "categories": [
    "counting"
   ],
@@ -46,5 +46,7 @@ edge from solving the 2D problem (source) can be transferred to the complex 3D o
 learning from partial annotation [6] to further reduce the annotation cost in the complex target domain (annotation is
 very expensive in 3D).
 
-
+## Overlap
+- [Publication]({{urls.media}}/counting/arteta12.pdf)
+- [Implementation](http://www.robots.ox.ac.uk/~vgg/software/cell_detection/)
 

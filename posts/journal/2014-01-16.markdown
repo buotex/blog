@@ -1,0 +1,16 @@
+{
+  "title": "Daily",
+  "date": "2014-01-16",
+  "categories": [
+    
+  ],
+  "tags": [
+    
+  ]
+}
+
+https://code.google.com/p/lh-vim/wiki/muTemplate#Vim 
+{{#todo_block}}
+- [] Fix journal, bug related to remapping of keys!?
+- [] Checkout vim-snipmate
+{{/todo_block}}

@@ -51,7 +51,7 @@
         var data = new google.visualization.DataTable(jsonData2, 0.5);
        // Create and draw the visualization.
         var table = new google.visualization.Table(document.getElementById('daily'));
-        table.draw(data, {showRowNumber: true});
+        table.draw(data, {showRowNumber: false});
         //timeline.draw(data, {'displayAnnotations': true});
       }
       google.setOnLoadCallback(drawVisualization);
@@ -60,7 +60,7 @@
   <body style="font-family: Arial;border: 0 none;">
 
 <h2>Daily Progress for the past 30 days</h2>
-    <div id="daily" style="width: 500px; height: 400px;"></div>
+    <div id="daily" style="width: 500px; height: 250px;"></div>
 <h2>Overall overview</h2>
     <div id="visualization" style="width: 500px; height: 400px;"></div>
   </body>
