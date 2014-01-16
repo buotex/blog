@@ -14,3 +14,40 @@ https://code.google.com/p/lh-vim/wiki/muTemplate#Vim
 - [] Fix journal, bug related to remapping of keys!?
 - [] Checkout vim-snipmate
 {{/todo_block}}
+
+
+Paper correction!
+[paper]({{urls.media}}/pdfs/ilastik.pdf)
+
+Page 1
+
+- itk -> ITK
+- 
+-
+-
+-
+
+References
+
+- [4] write given names fully
+- one scheme for writing "pages"
+- [7] e329 !?
+- [9] full names?
+- [10] Wolfgang J. but previously, no .
+- [14] ugly, . etc.
+- [16] page?
+- [17] preprint?
+- [18] Koethe/ FredA !?
+- [18] editors, wtf?
+- [19] fix .
+- [21] publication?
+- [23,24]: pages?
+- [22-25]: write out names
+- [26] Str**ae**hle
+- [27] Michael **H.A.** Schmitz, fix . for everyone!
+- [31] publication?
+- [32] et al.?
+- [33] IlyaG
+- [34] ., etc.
+- [35] C. N? Straehle, pages?
+- [38] .

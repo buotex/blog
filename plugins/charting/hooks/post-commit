@@ -10,5 +10,5 @@ cp ~/code/gitstats/blog/lines_of_code_json.dat ~/blog/media/linecount.json
 ~/code/blog/plugins/charting/lastdays.sh > ~/code/blog/plugins/charting/daily.txt
 cd ~/code/blog/plugins/charting
 python lastdays.py
-rm daily.txt
+#rm daily.txt
 mv daily.json ~/blog/media/daily.json

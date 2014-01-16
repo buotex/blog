@@ -74,6 +74,17 @@ Move away from dot annotations?
 We could try to implement the pylon-thingy, such that instead of dot annotations, it'd only be necessary to click on one
 of these pylons.
 
+Resources:
+
+- [Lempitsky - pylon]({{urls.media}}/counting/lempitsky_2011_pylon.pdf)
+- [Segmentation Tree](http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html)
+
+
+##Notes
+
+Both of the structure features in ilastik are useful to discern split-up cells, at low filter sizes.
+
+
 #Todo
 
 {{#todo_block}}
