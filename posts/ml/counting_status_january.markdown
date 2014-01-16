@@ -56,6 +56,24 @@ When marking both, it is difficult to calibrate our prediction results, due to t
 For these images, an approach via classification is probably better - there are no overlaps anyway.
 The result is otherwise quite messy for this dataset.
 
+##Ex3
+
+**Just use the ilastik pixel classification as a baseline**
+
+![]({{urls.media}}/counting/results/gerlich3.png)
+
+The results are actually worse than expected, there is not enough contextual data to really separate split-up cells from
+normal ones. Pixel-wise anything may be troublesome here?
+In classification, it would be doable to just take the majority of the area and count that, along with some other
+tricks, but it is surprisingly difficult.
+
+
+##Ex4
+
+Move away from dot annotations?
+We could try to implement the pylon-thingy, such that instead of dot annotations, it'd only be necessary to click on one
+of these pylons.
+
 #Todo
 
 {{#todo_block}}
