@@ -114,6 +114,14 @@ Given the scale of the bayer data, for example, this would be impossible for den
 dots are still the best solution. On the other hand, is it possible to differentiate cells with that
 resolution?
 
+##Ex5
+
+- Do superpixel segmentation
+- Calculate features for superpixel
+- place seeds
+- bleed seeds out into regions
+- foreground/background segmentation
+- training / prediction
 
 ####Evaluation:
 
@@ -124,4 +132,7 @@ resolution?
 
 {{#todo_block}}
 - [+] Ask U. about phone-conference
+- [] Implement ilastik-gui option to take advantage of the segmentation? - unlikely
+- [] Prepare console workflow again, this time based on superpixels!
+- [] Find decent superpixel features
 {{/todo_block}}
