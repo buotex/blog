@@ -19,10 +19,17 @@ the use of specific counting methods such as hours, as overlaps make the classif
 
 #Introduction
 
-##Dataset
+##Datasets
 
 Our first experiments are done on the gerlich dataset, stored on the mip-server ( ssh://hci:/home/users/mip/data/gerlich )
 ![]({{urls.media}}/counting/results/gerlich.jpg)
+
+####Notes
+
+- orange: just before split
+- purple: splitting
+- green: boring
+- yellow: merging
 
 
 
@@ -87,6 +94,8 @@ Both of the structure features in ilastik are useful to discern split-up cells, 
 ##Superpixels
 
 - [Contour relaxed superpixels](http://www.vsi.cs.uni-frankfurt.de/research/current-projects/superpixel-segmentation/)
+- [Springerlink](http://link.springer.com/chapter/10.1007%2F978-3-642-40395-8_21)
+- Gibbs-Markov random field model
 
 ![]({{urls.media}}/counting/results/january/superpixels_boundaryOverlay.png)
 
@@ -94,9 +103,22 @@ Both of the structure features in ilastik are useful to discern split-up cells, 
 superpixels2.png 10 10``
 ~20 secs
 
-
 ![]({{urls.media}}/counting/results/january/superpixels2_boundaryOverlay.png)
 
+Proposal of modification: Instead of placing gaussians on top of the dot-marks, we can instead let
+consider the dot as a seed for a region - such that the whole region can be used as an annotation.
+Of course, this is only viable if the number of overlaps is small and thus this segmentation is
+feasible.
+
+Given the scale of the bayer data, for example, this would be impossible for dense regions - there,
+dots are still the best solution. On the other hand, is it possible to differentiate cells with that
+resolution?
+
+
+####Evaluation:
+
+- Performs well compared to a previous watershed approach, though it is also magnitudes slower.
+- Biggest difference: borders are much smoother and most sizes are homogeneous.
 
 #Todo
 
