@@ -1,0 +1,18 @@
+{
+  "title": "Placeholder",
+  "date": "2014-01-17",
+  "categories": [
+    "unsorted",
+  ],
+  "tags": [
+    
+  ]
+}
+
+Well, while today wasn't very productive, I found a new vim plugin!
+It is time to check out snipmate along with vim-snippets - the latter will stay, while there are
+several implementations which could perform differently for extracting these snippets, whereas the
+current choice may not be the best one (snipmate).
+On a sidenote: vim-snippets actually ships with ultrasnip?
+
+!
