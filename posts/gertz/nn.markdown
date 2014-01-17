@@ -72,6 +72,8 @@ Compared to **range queries** [^range]:
 Instead of directly using the ``dist(p,q)`` function, we can first use an approximate solution. Which would be the most
 useful? Well, a lower estimate, $$LB$$ is fitting here: if we *underestimate the distance*, we can later refine it.
 
+
+
 Possible ways for an underestimate:
 
 - For an object $$q$$, simplify q and calculate ``dist(p,mbb(q))``.
@@ -84,6 +86,22 @@ Minmaxdist
 
 ##RKV
 
+As mentioned, **farthest** is uninitialized in the basic approach. If an **index** is available, it
+is possible to prune results from the opposite end.
+In contrast to the previous **MINDIST(q, region)**, we can use **MAXDIST(q, region)**. 
+
+Properties of **MAXDIST**
+
+- maximum distance between query and *all* points in page region
+- NN-distance cannot get worse than MAXDIST
+
+MAXDIST(q, region) = $$\sqrt{\sum_{0<i\leq d} \max{(q_i - region.UB_i)^2, (q_i - region.LB_i)^2)}}$$
+
+Properties of **MINMAXDIST**
+
+- MBRs as page regions: improved estimate of maixmum NN-distance
+- On every edge of the MBR, there must be a point
+- Intuition: closest edge, farthest point
 #Footnotes
 
 [^Script1]: [Gertz, Nearest Neighbour Queries 1]({{urls.media}}/gertz/rdb/05-queryp-3.pdf)
