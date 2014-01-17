@@ -1,6 +1,6 @@
 {
   "title": "Counting status January",
-  "date": "2014-01-16",
+  "date": "2014-01-17",
   "categories": [
  "counting"   
   ],
@@ -84,9 +84,22 @@ Resources:
 
 Both of the structure features in ilastik are useful to discern split-up cells, at low filter sizes.
 
+##Superpixels
+
+- [Contour relaxed superpixels](http://www.vsi.cs.uni-frankfurt.de/research/current-projects/superpixel-segmentation/)
+
+![]({{urls.media}}/counting/results/january/superpixels_boundaryOverlay.png)
+
+``~/code/compareCounting/superpixels/contourRelaxedSuperpixels-0.1-r2/build/contourRelaxedSuperpixels
+superpixels2.png 10 10``
+~20 secs
+
+
+![]({{urls.media}}/counting/results/january/superpixels2_boundaryOverlay.png)
+
 
 #Todo
 
 {{#todo_block}}
-- [] Ask U. about phone-conference
+- [+] Ask U. about phone-conference
 {{/todo_block}}
