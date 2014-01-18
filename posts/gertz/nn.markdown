@@ -77,7 +77,11 @@ than the **furthest possible point** in the region.
 - Thus, if the MAXDIST is smaller than the current best nearest neighbour, a new NN-candidate is found.
 - This can be formulated as MAXDIST(q, region) = $$\sqrt{\sum_{0<i\leq d} \max{[(q_i - region.UB_i)^2, (q_i - region.LB_i)^2]}}$$
 
-Properties of **MINMAXDIST**[^minmaxdist]
+We can further improve on the **MAXDIST** estimate, if the enclosing object is a **minimal bounding
+box**[^mbb].
+
+The **MINMAXDIST**[^minmaxdist] takes advantage of the fact that a **minimal bounding box is
+deterministic**, it is defined by its most outer points (see convex hull[^convhull]).
 
 - **MBRs** as page regions: improved estimate of maixmum NN-distance
 - On every edge of the MBR, there must be a point
