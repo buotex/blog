@@ -1,6 +1,6 @@
 {
   "title": "Vim",
-  "date": "2013-12-11",
+  "date": "2014-01-18",
   "categories": [
     "tricks"
   ],
@@ -35,3 +35,13 @@ vim +BundleInstall +qall
   lowercase variant
 - ``s/\([A-Z]\)\([A-Z]\{1,}\) /\1\L\2 /g`` Turn uppercase word into Upper+lowercase
 ~~~
+
+~~~vim
+- ``spar<TAB>`` expands to a snippet to write the section name in markdown
+~~~
+##TODO:
+
+{{#todo_block}}
+- [] Fix vim-internal syntax highlighting for embedded code blocks
+- [] 
+{{/todo_block}}
