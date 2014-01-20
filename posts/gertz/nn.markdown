@@ -74,9 +74,8 @@ The **MAXDIST**[^maxdist] for a query and a region is defined in a simple way: I
 region has to contain at least one point. This point cannot be further away from the query point
 than the **furthest possible point** in the region. 
 
-- Thus, if the MAXDIST is smaller than the current best nearest neighbour, a new NN-candidate is found.
+- Thus, if the MAXDIST is smaller than the current best nearest neighbour, a new NN-candidate is found, **results.farthest** can be replaced
 - This can be formulated as MAXDIST(q, region) = $$\sqrt{\sum_{0<i\leq d} \max{[(q_i - region.UB_i)^2, (q_i - region.LB_i)^2]}}$$
-- The existence of this new NN-candidate can prune pages which have a **MINDIST** which is too high
 
 We can further improve on the **MAXDIST** estimate, if the enclosing object is a **minimal bounding
 box**[^mbb].
@@ -85,11 +84,22 @@ The **MINMAXDIST**[^minmaxdist] takes advantage of the fact that a **minimal bou
 deterministic**, it is defined by its most outer points (see convex hull[^convhull]).
 
 - On every edge of the MBR, there must be at least one point
--
+- Prior to the recursive descent: sort child pages based on MINDIST (has 
+been shown to be best priority criterion in experiments)
 
-- **MBRs** as page regions: improved estimate of maixmum NN-distance
-- On every edge of the MBR, there must be a point
-- Intuition: closest edge, farthest point
+<details><summary>RKV comparison</summary><img src="{{urls.media}}/rkv.png"></details>
+
+####Summary
+
+- Prioritization using MINDIST reduces page accesses from 7 to 3
+- MINMAXDIST improves pruning distance, but doesn’t avoid page
+accesses
+- Despite prioritization: depth-first search can be severely misguided,
+e.g., when a page on the first level is very close to query point but child
+pages are relatively far away
+
+
+
 Still, depending on the data structure used, ``dist(q,child)`` may be a very expensive operation in practice.
 For example, the distance to an arbitrary polygon is non-trivial.
 We introduce the concept of **Filtering** and **Refinement** to improve the process.
