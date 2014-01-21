@@ -82,6 +82,7 @@ in log-log space.
 
 #Mutual pruning strategies
 
+##Voronoi-planes
 Idea
 - If a point x lies on p‘s side of the Voronoi-plane, then q cannot be NN of x;
 thus $$x \not \in RNN(q)$$
@@ -108,3 +109,80 @@ introduced.
 Note that the directory rectangle **MUR2** has to be refined as well, because it overlaps with the
 center square.
 <img src="{{urls.media}}/gertz/rdb/voronoi4.png"></details>
+
+####Notes
+
+Pruning is done based on _points_, as they define the planes.
+In the next section, we show an algorithm that uses information from the directory rect again for
+pruning - based on minmax-distances.
+
+
+##Min/Max-Dist-approach
+
+This method again also works for metric data, as we work with min/max distances.
+In addition, nothing is precomputed, so we work with lower and upper bounds instead which are
+computed "live".
+
+
+![Pruning]({{urls.media}}/gertz/rdb/minmaxpruning2.png)
+
+<details><summary>Disadvantages of the approach</summary>
+<img
+src="{{urls.media}}/gertz/rdb/minmaxpruning.png"></details>
+
+##Extension of Pruning to Higher Index Levels
+
+ln an extension to the previous voronoi-hyperplane approach, we can extend this to higher index
+levels by creating a hyperplane for every point in a page.
+Note that we can choose to use a heuristic, such that we don't have to refine every single point,
+just use a conservative approximation.
+
+![Conservative approximation]({{urls.media}}/gertz/rdb/conservativeapproximation.png)
+
+To calculate the approximation, we use the following approach:
+
+- Split data space into 2d partitions based on center of page region E
+(e.g., 4 partitions NW, NE, SE, and SW in 2d space)
+For each partition P: choose reference point Re such that:
+$$\forall p \in P, \exists e \in E$$ with $$dist(p,e) \leq dist(p,Re)$$
+Note: reference point is unique due to chosen partitioning
+
+**Intuitively**, pick the points that are farthest away from the query point on the rectangle.
+
+
+![Higher index pruning]({{urls.media}}/gertz/rdb/higherindexpruning1.png)
+
+
+##Extension of Geometric RkNN-Search[^georknn] for $$k \geq 1$$
+
+Extension idea: also remember the number of points that an approximate hyperplane represents, if it
+is high enough (say, k), then RkNN-candidates can be pruned.
+
+####Notes
+
+- flexible with regards to k
+- better pruning than min/max-dist
+- updates are relatively cheap, unless the page itself is changed
+- storage for all 2d hyperplanes
+- pruning test costly
+
+![Higher index pruning]({{urls.media}}/gertz/rdb/higherindexpruning2.png)
+
+##Optimal pruning
+
+Idea: Check for each individual point in page if the dist(q,p) is too high compared to MAXDIST(e,p)
+for a given entity e, if so then prune entire page.
+
+####Notes
+
+- Pruning is equal to geometric approximate hyperplane approach in some cases
+- no extra index
+- flexible with regards to k
+- cheap in the actual testing, as MAXDIST is cheap
+- only for vector data
+
+
+
+###Footnotes:
+
+- [Summary]({{urls.media}}/gertz/rdb/05-queryp-5.pdf#page=9)
