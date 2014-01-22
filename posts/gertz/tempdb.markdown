@@ -65,12 +65,15 @@ reporting.
 - Is a **Transaction time** database, each record is an interval
 - At every timestamp it represents a "Valid time" db
 
+##Data structures
+- Previous data structures do not automagically increase the end-time for objects which are still
+  alive, they would require an update for every time step
+- The preferred data structure to handle Bitemporal datases is the MVBT[^btree]
 ##Summary
 - It is possible to change the past / future with valid time models, not with transaction time.
 - A valid time column is most appropriate when changes to rows occur relatively infrequently. To
  represent attributes that change very frequently, such as a point of sale table, an event table is
  preferable to a valid-time table. 
-- The preferred data structure to handle Bitemporal datases is the MVBT[^btree]
 
 #Footnotes
 Transaction time
