@@ -1,0 +1,27 @@
+{
+  "title": "Daily",
+  "date": "2014-01-22",
+  "categories": [
+    "journal"
+  ],
+  "tags": [
+    
+  ]
+}
+
+New idea: Let's design a MMR system to gamify studying/etc. vs yourself!
+
+- Based on todo list
+- random task is selected via matchmaking system (ok, just randomly pick something)
+- if done well, give yourself +points, otherwise -
+- log activities, can make statistics out of that, plot mmr!
+- difficulty level? implement later
+- should group up activities somehow? - also later
+- some research says that it's easier to make a "done" instead of a "todo" list, but this isn't
+equal to gaming experience
+- Can use something like a topic list, create a virtual challenge: goal is in a stretch of time to
+- solve challenge
+
+
+Example: Topic list for studying rdb, every challenge block searches for one topic, goal is to be
+able to answer questions regarding that topic.
