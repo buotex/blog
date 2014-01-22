@@ -1,8 +1,8 @@
 {
   "title": "Temporal databases",
-  "date": "2014-01-21",
+  "date": "2014-01-22",
   "categories": [
-    "unsorted"
+    "databases"
   ],
   "tags": [
     
@@ -70,6 +70,7 @@ reporting.
 - A valid time column is most appropriate when changes to rows occur relatively infrequently. To
  represent attributes that change very frequently, such as a point of sale table, an event table is
  preferable to a valid-time table. 
+- The preferred data structure to handle Bitemporal datases is the MVBT[^btree]
 
 #Footnotes
 Transaction time
@@ -81,4 +82,5 @@ Valid time
 Bi-temporal database
 : supports both transaction and valid time
 
+[^btree]: [Multi-version BTree](/posts/gertz/btree#multi_version)
 
