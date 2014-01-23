@@ -1,6 +1,6 @@
 {
   "title": "B+-Tree",
-  "date": "2014-01-22",
+  "date": "2014-01-23",
   "categories": [
    "database" 
   ],
@@ -55,8 +55,8 @@ Weak version condition!
    - underflow: Do Version split
 
 Strong version condition!
-: The number of current version entries after a version split must be in the range from $$(1 +
-\epsilon)*d to (k-\epsilon)*d$$
+: The number of current version entries after a version split must be in $$[(1 +
+\epsilon)*d, (k-\epsilon)*d]$$
 
    - underflow: Merge sibling blocks
    - overflow: split by key values
