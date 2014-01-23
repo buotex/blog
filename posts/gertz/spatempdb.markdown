@@ -27,7 +27,14 @@
 - Join queries
 - SImilarity queries
 
+##Data structures
 
+- One Approach: 3D-R-Tree, but:
+- Difficult to cluster
+- Overlaps / empty spaces
+- What is **now**
+
+![3D RTree]({{urls.media}}/3dr_tree.png)
 
 ##Representations in 3D+t
 
