@@ -1,6 +1,6 @@
 {
   "title": "Spatio-temporal Databases",
-  "date": "2014-01-22",
+  "date": "2014-01-24",
   "categories": [
     "databases"
   ],
@@ -34,8 +34,14 @@
 - Overlaps / empty spaces
 - What is **now**
 
-![3D RTree]({{urls.media}}/3dr_tree.png)
+![3D RTree]({{urls.media}}/gertz/rdb/3dr_tree.png)
 
 ##Representations in 3D+t
 
 - Moving points create **trajectories**, which can be modelled by e.g. linear interpolation
+
+
+#References
+
+- [Script]({{urls.media}}/06_std-3.pdf)
+- [Script]({{urls.media}}/06_std-4.pdf)

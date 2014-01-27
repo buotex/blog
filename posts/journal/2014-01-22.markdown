@@ -1,6 +1,6 @@
 {
   "title": "Daily",
-  "date": "2014-01-22",
+  "date": "2014-01-23",
   "categories": [
     "journal"
   ],
@@ -25,3 +25,9 @@ equal to gaming experience
 
 Example: Topic list for studying rdb, every challenge block searches for one topic, goal is to be
 able to answer questions regarding that topic.
+
+New approach: Find something VERY important to do - and don't do it so we can work on less important
+things.
+
+I guess the most important thing to do now would be studying, so the less important one is writing
+some code.

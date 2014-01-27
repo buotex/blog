@@ -1,6 +1,6 @@
 {
   "title": "Counting status January",
-  "date": "2014-01-17",
+  "date": "2014-01-24",
   "categories": [
  "counting"   
   ],
@@ -117,11 +117,21 @@ resolution?
 ##Ex5
 
 - Do superpixel segmentation
-- Calculate features for superpixel
+- foreground/background segmentation / unsupervised perhaps? 
+- Calculate features for superpixel 
+- integrate vigra stuff?
+- clusterization
 - place seeds
 - bleed seeds out into regions
-- foreground/background segmentation
 - training / prediction
+
+##Ex6
+
+- Get more ground truth
+- Combine either pylon or contour approach with structured forest
+- How do we enter a cost matrix into the forest?
+- Suggestion: Tune the random forest to purity with regards to classes in its leaves
+- Suggestion: For the number of elements, do something elaborate?
 
 ####Evaluation:
 
@@ -134,5 +144,8 @@ resolution?
 - [+] Ask U. about phone-conference
 - [] Implement ilastik-gui option to take advantage of the segmentation? - unlikely
 - [] Prepare console workflow again, this time based on superpixels!
-- [] Find decent superpixel features
+- [+] Find decent superpixel features
 {{/todo_block}}
+
+#References
+[Mitosis detection on gerlich data]({{urls.media}}/counting/sommer_12_learning-based.pdf)

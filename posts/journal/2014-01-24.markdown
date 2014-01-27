@@ -1,0 +1,15 @@
+{
+  "title": "Journal",
+  "date": "2014-01-25",
+  "categories": [
+    "unsorted"
+  ],
+  "tags": [
+    
+  ]
+}
+
+- [+] Fix restarts of pomodoro
+- [] Fix break on ctrl-c for pomodoro
+- [+] Fix tabbing in python
+

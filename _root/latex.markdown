@@ -1,6 +1,6 @@
 {
-  "title": "",
-  "date": "2014-01-10",
+  "title": "Latex",
+  "date": "2014-01-24",
   "categories": [
     
   ],
