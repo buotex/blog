@@ -6,7 +6,7 @@ module PagesModelViewAddons
 		prefix = "<a href=\"/api?post=#{filename}&number="
     # command = 'javascript:setTimeout(\'history.go(0)\',2000); javascript:event.target.port=8888;'
     command = 'javascript:event.target.port=8888;'
-		postfix= "\" onclick=\"#{command}\">[-]</a>"
+		postfix= "\" onclick=\"#{command}\">\u2610</a>"
 		block = sub_context.gsub(/\[[^+]?\]/).with_index { |m, i| "#{prefix}#{1+i}#{postfix}" }
 	end
 end

@@ -9,8 +9,8 @@ with open('daily.json','w') as fg:
             splitup = line.split()
             date = splitup[0]
             added = splitup[4]
-            removed = splitup[6]
-            netadded = int(added) - int(removed)
+            #removed = splitup[6]
+            #netadded = int(added) - int(removed)
             tuples.append((date, int(added)))
 
     fg.write('{\n"cols":[{"id":"Col1","label":"Day","type":"string"},\
