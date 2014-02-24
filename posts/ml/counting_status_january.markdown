@@ -1,6 +1,6 @@
 {
   "title": "Counting status January",
-  "date": "2014-01-24",
+  "date": "2014-02-07",
   "categories": [
  "counting"   
   ],
@@ -31,6 +31,7 @@ Our first experiments are done on the gerlich dataset, stored on the mip-server 
 - green: boring
 - yellow: merging
 
+- WARNING: DON'T USE .values() for region features - THINGS WILL BREAK
 
 
 
@@ -105,6 +106,11 @@ superpixels2.png 10 10``
 
 ![]({{urls.media}}/counting/results/january/superpixels2_boundaryOverlay.png)
 
+####Evaluation:
+
+- Performs well compared to a previous watershed approach, though it is also magnitudes slower.
+- Biggest difference: borders are much smoother and most sizes are homogeneous.
+
 Proposal of modification: Instead of placing gaussians on top of the dot-marks, we can instead let
 consider the dot as a seed for a region - such that the whole region can be used as an annotation.
 Of course, this is only viable if the number of overlaps is small and thus this segmentation is
@@ -114,6 +120,7 @@ Given the scale of the bayer data, for example, this would be impossible for den
 dots are still the best solution. On the other hand, is it possible to differentiate cells with that
 resolution?
 
+<!---
 ##Ex5
 
 - Do superpixel segmentation
@@ -124,19 +131,49 @@ resolution?
 - place seeds
 - bleed seeds out into regions
 - training / prediction
+-->
+
+##Ex5
+
+- Prediction / Training for superpixels
+- Contour-relaxed superpixels
+- Using vigra region-features
+
+####Result
+![]({{urls.media}}/counting/results/january/superpixeltraining.png)
+![]({{urls.media}}/counting/results/january/superpixelprediction.png)
+
+- Left: Ground truth, Right: Prediction, Top: Training
+- Number of samples: 16 Superpixels
+- Every superpixel is assigned a count, blueish for low counts (down to 0), red for higher values (up
+to 4 in this set).
+- Foreground/background segmentation is working passably, but the counts are still bad
+- Features used: ['Mean', 'Minimum', 'Maximum', 'Count', 'Covariance', 'Principal<PowerSum<2> >']
+- 135 gt, 180 predicted, 76% of the superpixels were predicted correctly, similar results over
+ multiple runs
 
 ##Ex6
 
-- Get more ground truth
+
+
+- Get more ground truth by using multiple parameters for the superpixels - bit close to multigrid
+ approach
+- First test using 2 layers
+- Pyramid graphical model scheme
+- Solve with ???
 - Combine either pylon or contour approach with structured forest
 - How do we enter a cost matrix into the forest?
 - Suggestion: Tune the random forest to purity with regards to classes in its leaves
 - Suggestion: For the number of elements, do something elaborate?
 
-####Evaluation:
+![]({{urls.media}}/counting/results/january/superpixelgrid.png)
+Better results due to using 2 layers, numbers:
+- 135 gt, 160 predicted, less noise, 78-80% superpixels correct
+- foreground/background segmentation now correct
 
-- Performs well compared to a previous watershed approach, though it is also magnitudes slower.
-- Biggest difference: borders are much smoother and most sizes are homogeneous.
+Approach:
+
+
 
 #Todo
 

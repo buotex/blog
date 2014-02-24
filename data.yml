@@ -1,15 +1,13 @@
 title : Studying
-tagline: Gamer at heart
+tagline : Gamer at heart
 author :
   name : Buote Xu
   email : blah@email.test
   github : buotex
 
 navigation :
+  - todo
   - archive
   - tags
   - categories
   - pages
-  - about
-  - posts
-  - journal
