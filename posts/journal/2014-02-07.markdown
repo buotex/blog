@@ -1,0 +1,20 @@
+{
+  "title": "Journal",
+  "date": "2014-02-07",
+  "categories": [
+    "unsorted"
+  ],
+  "tags": [
+    
+  ]
+}
+
+Idea:
+combine todo-list with a pomodoro script running in the background.
+We can also query the current progress via zsh!
+
+
+
+Sidenote: Should start with daily journals again, otherwise i'm fucking lazy and don't really
+"start" my day in the first place.
+
