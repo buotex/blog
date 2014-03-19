@@ -1,6 +1,6 @@
 {
   "title": "Counting status February",
-  "date": "2014-02-21",
+  "date": "2014-03-03",
   "categories": [
     "counting"
   ],
@@ -129,9 +129,38 @@ OOOk, setting the font size automatically does not break things, but doing it vi
 
 
 
+#More debugging:
+
+2 crashes (till now):
+
+1. an object is its own parent (this->d_ptr->parent == this)
+2. item has no valid d_ptr
+3. WTF: rectangles are created only when hovering over the rectangle!?
+
 
 
 {{/todo_block}}
+
+
+#Ex3
+
+Now we have to show that our method does decently on the bayer data, as the resolution is much
+different.
+Hopefully, we still have all the training data used, otherwise we're in trouble.
+
+
+- Make labelimages for gerlich data
+- Label connected components gotten via thresholding
+- Calculate distance transform of connected components
+- Skeletonize distance transform
+- Use skeleton-image as base for labels by applying gaussian filter to the data.
+
+
+
+skeleton1, skeleton2: only gaussian magnitude for features
+skeleton3: multiple features
+
+dots1: multiple features
 
 
 

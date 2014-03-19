@@ -1,0 +1,38 @@
+{
+  "title": "Daily rants",
+  "date": "2014-03-06",
+  "categories": [
+    "unsorted"
+  ],
+  "tags": [
+    
+  ]
+}
+
+- Fuck science, seriously
+- Fuck sleepless nights, bad payment, looming deadlines, utter lack of help / interest of other
+  people
+- Fuck having no time to take care of yourself
+- In short, fuck the world.
+
+What have I done today:
+An hour-long phonecall so that I can finally tell someone what I've been doing the past year
+Trying to finally reproduce old results (I think the last try finally produced something useful,
+though I'm not entirely sure wtf I actually changed)
+
+Note to self: Make a backup of that file, along with a couple other things, so we have some backup
+for the results.
+
+Started implementing some gradient descent method, which kinda failed because I have no clue how to
+do that - something I should actually learn.
+
+Had a good fap in the morning~
+
+Made some plots: 
+What happens when we use watershed-centers instead of our local maxima as seeds? Why did we do it in
+the first place?
+It's currently a side-product that was never used in actual production code!
+
+So what we _have_ done is the following:
+
+

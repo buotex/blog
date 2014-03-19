@@ -1,6 +1,6 @@
 {
   "title": "",
-  "date": "2014-01-16",
+  "date": "2014-03-18",
   "categories": [
     
   ],
@@ -10,3 +10,4 @@
 }
 
 
+Theorem: submodular quadratic pseudo-boolean functions are graph-representable

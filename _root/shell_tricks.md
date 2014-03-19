@@ -28,3 +28,15 @@
 `vim --servername MAIN --remote-send ":PomodoroStart()<CR>"` 
 : send a command to the vim server session with the name MAIN
 
+`wget -r --no-parent ftp://slackbuilds.org/14.1/source/l/qt/` 
+: Download folder with wget
+
+`sshfs hci:/home/users/mip/data ../mip` 
+: sshfs link
+
+`convert 0049_cam.tiff -resize 50% 0049_cam.png` 
+: resize image to 50% of original size while converting it to png
+
+`plt.xlabel("Microscope Column",fontsize = 30)` 
+: How to set the xlabel of a plot in matplotlib
+

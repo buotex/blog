@@ -1,9 +1,6 @@
-- ☐ **Get appointment with Reinelt**
-- ☐ **Need appointment with Gertz**
 - ☐ Ask martin for elongated cells1 cells2 cells3 cells4 cells5 @hci
 - ☐ play around with more region features @hci
 - ☐ refine method @hci
-- ☐ stretch data and do experiments
 - ☐ try downsampling cell data @hci
 - ☐ uli @hci
 - ☐ work in freds remarks @hci
