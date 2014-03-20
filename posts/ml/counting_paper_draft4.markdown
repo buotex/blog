@@ -152,17 +152,37 @@ By fixing the variables $a_i$ to these values, we can turn the optimization prob
 non-integer
 QP, which is solvable to optimality, given our precomputed $a_i$.
 
-Note that due to the constraints in TODO and TODO, 
+Note that due to the constraints used in the formulation, 
 it is not possible to learn parameters $w_1,b_1$ which contradict the binary variables.
-This means that any pixels belonging to boxes that were predicted to have positive density beforehand retain the 
-same state even when learning new parameters $w_2,b_2$ after taking the box annotations into
-account. Thus, additional iterations using the same threshold approach will yield the same results.
+This means that any pixels (which belong to annotated regions) that were predicted to have positive density beforehand retain the 
+same state even when learning new parameters $w_2,b_2$ by taking the box annotations into
+account. Therefore, additional iterations to learn new parameters using the same threshold approach will yield the same results - namely just $w_2, b_2$.
 
-When using large boxes which encompass many pixels, all slack
-variables $l_i$ for a given box have to be used concurrently in the constraints
-\eqref{eq:bminus} and \eqref{eq:bplus}. 
-While the \emph{number} of constraints grows linearly, the interaction between
-the slack variables result in a quadratic runtime behaviour, as can be seen in
+\paragraph{Iterative approach \label{iter}}
+To improve the solution, we thus propose the following threshold mechanism:
+Let $f_t(x) = \left \langle w_t,x \right \rangle + b_t$, the prediction for a pixel x in the t-th iteration. 
+We want to learn $a_{t + 1}$ for the next iteration step.
+In the previous thresholding method which is used to get the initial values for the variables a, only the current prediction 
+($f_t(x) \rightarrow a_{t+1}$) is taken into account.
+To produce better better solutions, we have to look at the difference between the previous and the current prediction instead:
+Let $\epsilon > 0$, assume for a pixel x that $f_t(x) < -epsilon \rightarrow a_t = 0$. After learning a new $f_{t+1}$ using $a_t$, we may now predict 
+$- \epsilon< f_{t+1}(x) \leq 0$, which can be taken as evidence that our previous assumption of $a_t = 0$ may be wrong - we therefore set $a_{t+1} = 1$, 
+which flips the sign of the density for the specific pixel $x$.
+By selecting a reasonably small $\epsilon$, we can then iterate to better solutions of the original MIQP.
+
+
+\subsection{Removal of the slack variables}
+
+Let us re-investigate the role of the slack variables $l_i$: 
+they only serve to model $\sum \max(f(x_i,0)$ correctly, such that every term in the sum is non-negative in the MIQP formulation.
+For an annotated region R_j, we precompute the binary variables $a_i$, but if $a_i = 0$ we already know that $f(x_i) \leq 0$ due to the constraints, 
+therefore the density of the pixel $x_i$ will not make any contribution to the sum.
+Instead of relying on the slack variables $l_i$ to force $f(x_i) + l_i = 0$, we can remove both the slack variable and the term from the sum instead.
+As a result, removes the need for the slack variables in the practical implementation, which speeds up the optimization as can be seen in \ref{fig:benchmark}.
+Now, we only have to take into account pixels where we assumed $a_i = 1$, this can be expressed by 
+replacing $\max(f(x_i),0)$ with $a_i f(x_i)$.
+Note that $a_i$ can be considered a constant in the actual QP that we will solve, as we precompute the value. The formulation is now 
+
 \figref{fig:benchmark}. 
 \begin{figure}[htb]
 %\includegraphics[width = 1.0\linewidth]{images2/benchmark.png}
@@ -172,17 +192,6 @@ helper variables and thus save a lot of time.
 \label{fig:benchmark}}
 \end{figure}
 
-\subsection{Removal of the slack variables}
-If we assume consistent annotations on both box and pixel level, we can
-further simplify the problem by fixing the sign of $f(x_i), i \in \Box$  after
-the first pass.
-To achieve this, we use hard constraints to restrict the predictions
-according to the variables $\tilde{a}_i$.
-
-Using this approach, only pixels $(x_i)$ with $\tilde{a}_i = 1$ have to be taken
-into account to minimize the original box objective \eqref{eq:box}, we can
-therefore do without individual slack variables, by effectively replacing $\max(f(x_i),0)$ 
-with $\tilde{a}_i f(x_i)$, we can derive the following optimization problem:
 
 $$
 \begin{alignat*}{4}
@@ -207,7 +216,6 @@ w,{x_\Box}_\nu \rangle + b \right] &\forall \Box \in \mathcal{B}\\
 \end{alignat*}
 $$
 
-With this 
-we can now achieve runtimes
-which are viable for real-time experiments, while still providing accurate
-solutions.
+
+Our software implementation uses this formulation to provide a heuristic solution to the stated MIQP, which can 
+be further improved by the iterative approach as stated in \ref{iter}.
