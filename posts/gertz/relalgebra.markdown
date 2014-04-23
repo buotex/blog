@@ -58,6 +58,7 @@ Rename
 Semi-Join
 : Like natural join, but only keep the columns of the left (or right) operand
 
+
 #Tricks
 
 Backjoin
