@@ -1,6 +1,6 @@
 {
   "title": "R Tree",
-  "date": "2014-01-10",
+  "date": "2014-04-01",
   "categories": [
     "database"
   ],
@@ -142,7 +142,10 @@ Reinsert(Q)
 
 
 
-![]({{urls.media}}/gertz/rdb/r_tree.svg)
+<object height="100%" width="100%" 
+        data="{{urls.media}}/gertz/rdb/r_tree.svg" type="image/svg+xml">
+</object>
+
 
 #Variants
 
