@@ -1,7 +1,0 @@
-prose:
-  rooturl: 'posts'
-  siteurl: 'vps60203.ovh.net'
-  metadata:
-    posts:
-      title: "Title"
-      date: CURRENT_DATETIME
