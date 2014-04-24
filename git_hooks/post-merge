@@ -1,0 +1,4 @@
+#!/bin/sh
+python plugins/sanitize/cleanup.py
+git commit -am "fixing headers"
+git push
