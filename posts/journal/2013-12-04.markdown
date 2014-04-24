@@ -1,9 +1,13 @@
----
-title: 'Diary'
-date: '2013-12-04'
-description:
-tags: []
----
+{
+  "title": "Placeholder",
+  "date": "2014-04-24",
+  "categories": [
+    "unsorted"
+  ],
+  "tags": [
+    
+  ]
+}
 
 
 Nun, ändern wir einmal das Format dieser Einträge.

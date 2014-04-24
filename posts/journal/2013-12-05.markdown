@@ -1,9 +1,14 @@
----
-title: 'Diary'
-date: '2013-12-05'
-description:
-tags: []
----
+{
+  "title": "Placeholder",
+  "date": "2014-04-24",
+  "categories": [
+    "unsorted"
+  ],
+  "tags": [
+    
+  ]
+}
+
 
 Neuer Tag, neues Glück!
 Ich frage mich hier schon, wie die Symbole da aussehen werden.
