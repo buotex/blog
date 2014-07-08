@@ -68,3 +68,7 @@ Mean field
 
 Submodularity
 : [Posts](/posts/ml/submodular)
+
+Kalman Filter
+: [Posts](/posts/ml/kalman)
+
